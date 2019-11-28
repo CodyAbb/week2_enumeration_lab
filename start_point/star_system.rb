@@ -45,4 +45,12 @@ class StarSystem
     return close_planets.length
   end
 
+  def get_total_number_of_moons
+    planet_array = @planets.map{|planet| planet.number_of_moons}
+    total_moons = planet_array.reduce do |running_total, planet|
+      running_total + planet
+    end
+    return total_moons
+  end
+
 end
